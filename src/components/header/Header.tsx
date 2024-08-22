@@ -1,7 +1,13 @@
 import useWindowSize from '../../hooks/useWindowSize';
 
-function Header() {
+interface Props{
+    darkMode: boolean;
+    setDarkMode: (darkMode: boolean) => void;
+}
+
+function Header({darkMode}:Props) {
     const { width } = useWindowSize();
+    
 
     const selectHeader = () => {
         if (width > 768) {
@@ -20,6 +26,7 @@ function Header() {
     }
   return (
     <header>
+        <img src={ParamsHeader} alt="Logo" />
         {selectHeader()}
     </header>
   )

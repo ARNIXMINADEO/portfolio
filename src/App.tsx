@@ -1,16 +1,17 @@
 import './App.css'
-import { Box } from '@chakra-ui/react'
-import Section from './sections/section1/Section1'
 import Header from './components/header/Header'
 import Main from './pages/Main'
+import Footer from './components/footer/Footer'
+import React from 'react'
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(false)
 
   return (
     <div>
-      <Header />
+      <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
       <Main />
-      
+      <Footer />
     </div>
   )
 }
