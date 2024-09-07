@@ -32,7 +32,7 @@ function Header({darkMode}:Props) {
         {width > 768 ?
          <HeaderNavbarWeb buttons={paramsHeaderData.navbar.buttons} style={!darkMode ? paramsHeaderData.navbar.style.dark : paramsHeaderData.navbar.style.light}/> 
          : 
-         <HeaderNavbarMobile/>}
+         <HeaderNavbarMobile buttons={paramsHeaderData.navbar.buttons} actions={paramsHeaderData.navbar.action} style={!darkMode ? paramsHeaderData.navbar.style.dark : paramsHeaderData.navbar.style.light}/>}
     </header>
   )
 }

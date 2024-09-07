@@ -13,6 +13,36 @@ function HeaderNavbarWeb({buttons = [], style}:Props) {
   console.log("HeaderNavbarWeb style", style);
   return (
     <nav>
+      <Stack direction='row' spacing={4} align='center'>
+        {buttons.map((button, index) => {
+          console.log("button", button);
+            return (
+              <Button colorScheme='gray' variant='outline' key={index} style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '5px',
+                cursor: 'pointer',
+                transition: 'all 0.5s',
+                borderColor: style.buttomBackground,
+                borderRadius: '5px',
+                color: style.buttomBackground,
+                width: '100px',
+                height: '50px',
+              }}>
+                {button.icon}
+                <p>{button.title}</p>
+            </Button>
+            )
+          })}
+      </Stack>
+    </nav>
+  )
+}
+
+export default HeaderNavbarWeb
+
         {/*<ul style={{
             display: 'flex',
             justifyContent: 'center',
@@ -45,31 +75,3 @@ function HeaderNavbarWeb({buttons = [], style}:Props) {
                 )
             })}
         </ul>*/}
-      <Stack direction='row' spacing={4} align='center'>
-      {buttons.map((button, index) => {
-              console.log("button", button);
-                return (
-                  <Button colorScheme='gray' variant='outline' key={index} style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '5px',
-                    cursor: 'pointer',
-                    transition: 'all 0.5s',
-                    borderColor: style.color,
-                    color: style.buttomBackground,
-                    width: '100px',
-                    height: '50px',
-                  }}>
-                    {button.icon}
-                    <p>{button.title}</p>
-                </Button>
-                )
-            })}
-    </Stack>
-    </nav>
-  )
-}
-
-export default HeaderNavbarWeb

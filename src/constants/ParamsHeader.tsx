@@ -1,4 +1,4 @@
-import { faBars, faBook, faHouse, faPhone, faSliders, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBook, faBurger, faHouse, faPhone, faSliders, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ParamsHeader = () => {
@@ -32,6 +32,7 @@ const ParamsHeader = () => {
                     color: '#000000',
                     image: 'https://www.google.com',
                     buttomBackground: '#FFFFFF',
+                    icon: <FontAwesomeIcon icon={faXmark}/>
                 },
             },
             action:{
