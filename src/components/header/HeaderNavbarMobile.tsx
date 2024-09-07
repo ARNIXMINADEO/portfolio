@@ -1,5 +1,6 @@
-import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Stack, useDisclosure } from '@chakra-ui/react';
-import React from 'react'
+import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Stack, useDisclosure } from '@chakra-ui/react';
+import HeaderNavbarItemMobile from './HeaderNavbarItemMobile';
+import HeaderNavbarButtonDrawerClose from './HeaderNavbarButtonDrawerClose';
 
 interface Props {
   buttons: Array<{icon: JSX.Element, title: string, path: string}>;
@@ -12,24 +13,7 @@ function HeaderNavbarMobile({buttons = [], actions, style}:Props) {
   // const btnRef = React.useRef()
   return (
     <nav>
-      <Button
-       colorScheme='gray' variant='outline' style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '5px',
-        cursor: 'pointer',
-        transition: 'all 0.5s',
-        borderColor: style.buttomBackground,
-        borderRadius: '5px',
-        color: style.buttomBackground,
-        width: '40px',
-        height: '40px',
-      }}
-       onClick={onOpen}>
-        { isOpen ? actions.close.icon : actions.open.icon }
-      </Button>
+      <HeaderNavbarButtonDrawerClose isOpen={isOpen} onOpen={onOpen} actions={actions} style={style} />
       <Drawer
         isOpen={isOpen}
         placement='left'
@@ -49,23 +33,7 @@ function HeaderNavbarMobile({buttons = [], actions, style}:Props) {
               {buttons.map((button, index) => {
                 console.log("button", button);
                   return (
-                    <Button colorScheme='gray' variant='outline' key={index} style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      padding: '5px',
-                      cursor: 'pointer',
-                      transition: 'all 0.5s',
-                      borderColor: style.buttomBackground,
-                      color: style.buttomBackground,
-                      width: '100%',
-                      height: '100px',
-                      gap: '20px',
-                    }}>
-                      {button.icon}
-                      <p>{button.title}</p>
-                  </Button>
+                    <HeaderNavbarItemMobile icon={button.icon} title={button.title} style={style} key={index} action={() => {}} />
                   )
                 })}
             </Stack>

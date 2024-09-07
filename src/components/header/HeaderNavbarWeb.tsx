@@ -1,5 +1,5 @@
-import { Button, Stack } from '@chakra-ui/react';
-import React from 'react'
+import { Stack } from '@chakra-ui/react';
+import HeaderNavbarItemWeb from './HeaderNavbarItemWeb';
 
 interface Props {
     buttons: Array<{icon: JSX.Element, title: string, path: string}>;
@@ -17,23 +17,7 @@ function HeaderNavbarWeb({buttons = [], style}:Props) {
         {buttons.map((button, index) => {
           console.log("button", button);
             return (
-              <Button colorScheme='gray' variant='outline' key={index} style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '5px',
-                cursor: 'pointer',
-                transition: 'all 0.5s',
-                borderColor: style.buttomBackground,
-                borderRadius: '5px',
-                color: style.buttomBackground,
-                width: '100px',
-                height: '50px',
-              }}>
-                {button.icon}
-                <p>{button.title}</p>
-            </Button>
+              <HeaderNavbarItemWeb icon={button.icon} title={button.title} style={style} key={index} action={() => {}} />
             )
           })}
       </Stack>

@@ -1,4 +1,4 @@
-import { faBars, faBook, faBurger, faHouse, faPhone, faSliders, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBook, faHouse, faPhone, faSliders, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ParamsHeader = () => {
