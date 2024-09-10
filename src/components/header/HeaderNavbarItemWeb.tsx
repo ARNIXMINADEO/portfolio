@@ -12,17 +12,21 @@ function HeaderNavbarItemWeb({icon, title, style, key, action}:Props) {
   return (
     <Button colorScheme='gray' variant='outline' key={key} style={{
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '5px',
+      padding: '5px 10px 5px 10px',
       cursor: 'pointer',
       transition: 'all 0.5s',
       borderColor: style.buttomBackground,
-      borderRadius: '5px',
+      borderRadius: '10px',
       color: style.buttomBackground,
-      width: '100px',
-      height: '50px',
+      width: '150px',
+      height: '45px',
+      fontFamily: 'Comfortaa',
+      fontWeight: 'light',
+      lineHeight: '0',
+      gap: '10px',
     }} onClick={() => action()}>
       {icon}
       <p>{title}</p>
