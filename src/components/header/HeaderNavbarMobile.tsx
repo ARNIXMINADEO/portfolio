@@ -16,7 +16,7 @@ function HeaderNavbarMobile({buttons = [], actions, style}:Props) {
       <HeaderNavbarButtonDrawerClose isOpen={isOpen} onOpen={onOpen} actions={actions} style={style} />
       <Drawer
         isOpen={isOpen}
-        placement='left'
+        placement='right'
         onClose={onClose}
         // finalFocusRef={btnRef}
       >
@@ -24,6 +24,7 @@ function HeaderNavbarMobile({buttons = [], actions, style}:Props) {
         <DrawerContent style={{
           backgroundColor: style.color,
           color: style.buttomBackground,
+          borderRadius: '10px 0px 0px 10px',
         }}>
           <DrawerCloseButton />
           <DrawerBody style={{

@@ -22,6 +22,9 @@ function HeaderNavbarItemMobile({icon, title, style, key, action}:Props) {
       color: style.buttomBackground,
       width: '100%',
       height: '100px',
+      fontFamily: 'Comfortaa',
+      fontWeight: 'light',
+      lineHeight: '0',
       gap: '20px',
     }} onClick={()=> action()}>
       {icon}
